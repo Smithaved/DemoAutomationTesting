@@ -2,7 +2,9 @@ package org.DemoAutomationTesting.OrderTest;
 
 import org.testng.annotations.Test;
 
-public class OrderABookTest {
+import com.DemoAutomationTesting.GenericUtility.BaseClass;
+
+public class OrderABookTest extends BaseClass{
 @Test
 public void orderABookTest()
 {
