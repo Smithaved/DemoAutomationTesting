@@ -7,10 +7,8 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
@@ -18,14 +16,6 @@ public class BaseClass {
 	public FileLibrary fileLibrary;
 	JavaLibrary javaLibrary;
 	public WebDriverLibrary webDriverLibrary;
-	String  firstName;
-	String  lastName;
-	String  email;
-	String  phoneno;
-	String  address;
-	String  city;
-	String  state;
-	String  pincode;
 	long longtimeout;
 	public static WebDriver staticdriver;
 	@BeforeSuite

@@ -27,7 +27,6 @@ public void orderABookTest()
 	homePage.clickOnBook(webDriverLibrary, driver);
 	productDetailPage.addToBasket(webDriverLibrary, driver);
 	basketPage.procedToCheckout(webDriverLibrary, driver);
-	checkoutPage.enterTheDetail(firstName, lastName, email, phoneno, address, city, state, pincode);
-	
+	checkoutPage.enterTheDetail(firstName, lastName, email, phoneno, address, city, state, pincode);	
 }
 }
