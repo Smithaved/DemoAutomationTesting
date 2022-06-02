@@ -15,9 +15,9 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
 	public WebDriver driver;
-	FileLibrary fileLibrary;
+	public FileLibrary fileLibrary;
 	JavaLibrary javaLibrary;
-	WebDriverLibrary webDriverLibrary;
+	public WebDriverLibrary webDriverLibrary;
 	String  firstName;
 	String  lastName;
 	String  email;
@@ -49,14 +49,7 @@ public class BaseClass {
 		String timeout=fileLibrary.getCommonData("timeout");
 		javaLibrary=new JavaLibrary();
 		longtimeout=javaLibrary.stringToLong(timeout);
-		firstName=fileLibrary.getTestData("Order", 2, 1);
-		lastName=fileLibrary.getTestData("Order", 2, 2);
-		email=fileLibrary.getTestData("Order", 2, 3);
-		phoneno=fileLibrary.getTestData("Order", 2, 4);
-		address=fileLibrary.getTestData("Order", 2, 5);
-		city=fileLibrary.getTestData("Order", 2, 6);
-		state=fileLibrary.getTestData("Order", 2, 7);
-		pincode=fileLibrary.getTestData("Order", 2, 8);
+		
 		switch (browser) {
 		case "chrome":
 			WebDriverManager.chromedriver().setup();

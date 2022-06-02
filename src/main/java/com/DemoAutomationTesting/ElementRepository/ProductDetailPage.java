@@ -7,23 +7,26 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.DemoAutomationTesting.GenericUtility.WebDriverLibrary;
 
-public class HomePage {
-	public HomePage(WebDriver driver) {
+public class ProductDetailPage {
+	public ProductDetailPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath = "//div[@id='text-22-sub_row_1-0-2-1-0']//a[@class='woocommerce-LoopProduct-link']")
-	private WebElement bookLink;
+	@FindBy(xpath = "//a[@data-product_id='181']")
+	private WebElement addToBasketBtn;
 	
-	@FindBy(id = "text-22-sub_row_1-0-1-1-0")
+	@FindBy(xpath = "//div[@class='related products']")
 	private WebElement scroolElement;
 	
-	public void clickOnBook(WebDriverLibrary webDriverLibrary, WebDriver driver)
+	@FindBy(xpath = "//a[@class='added_to_cart wc-forward']")
+	private WebElement viewBasketLink;
+	
+	public void addToBasket(WebDriverLibrary webDriverLibrary, WebDriver driver)
 	{
 		webDriverLibrary.initializeJs(driver);
 		webDriverLibrary.scroolTillElement(scroolElement);
-		bookLink.click();
+		addToBasketBtn.click();
+		viewBasketLink.click();
 	}
-	
 	
 }

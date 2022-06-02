@@ -5,9 +5,12 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 /**
  * This class is used to store all the common methods of the selenium webdriver
@@ -15,6 +18,7 @@ import org.openqa.selenium.WebDriver;
  *
  */
 public class WebDriverLibrary {
+	JavascriptExecutor js;
 	/**
 	 * This method is used to launch the Application
 	 * @param url
@@ -62,5 +66,15 @@ public class WebDriverLibrary {
 			System.out.println("Problem during copying the files");
 		}
 		return dst.getAbsolutePath();
+	}
+	
+	public  void initializeJs(WebDriver driver)
+	{
+		js=(JavascriptExecutor)driver;
+	}
+	
+	public  void scroolTillElement(WebElement element)
+	{
+		js.executeScript("arguments[0].scrollIntoView()",element);
 	}
 }
